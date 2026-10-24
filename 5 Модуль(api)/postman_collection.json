@@ -1,0 +1,134 @@
+{
+  "info": {
+    "_postman_id": "f4dfcb2d-ed85-4314-a300-29bdd8d09ea2",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58583684",
+    "_collection_link": "https://go.postman.co/collection/58583684-f4dfcb2d-ed85-4314-a300-29bdd8d09ea2?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GET notes",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Статус 200 OK\", function () {\n    pm.response.to.have.status(200);\n});\n\nconst body = pm.response.json();\n\npm.test(\"Ответ — массив\", function () {\n    pm.expect(body).to.be.an(\"array\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "127.0.0.1:8000/api/notes",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "notes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET user=abs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "127.0.0.1:8000/api/notes?id_user=abc",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "notes"
+          ],
+          "query": [
+            {
+              "key": "id_user",
+              "value": "abc"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET user=999999",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "127.0.0.1:8000/api/notes?id_user=999999",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "notes"
+          ],
+          "query": [
+            {
+              "key": "id_user",
+              "value": "999999"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET user=²",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "127.0.0.1:8000/api/notes?id_user=²",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "notes"
+          ],
+          "query": [
+            {
+              "key": "id_user",
+              "value": "²"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseURL",
+      "value": ""
+    }
+  ]
+}
